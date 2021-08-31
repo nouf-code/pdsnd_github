@@ -180,6 +180,17 @@ def user_stats(df, city):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
 
+def printRowData():
+    # Print 5 row of data
+    i = 0
+    while True:
+        data = input('\nWould like to see the raw data? Enter yes or no.\n')
+        if data.lower() == 'yes':
+            print(df[i:i + 5])
+            i += 5
+        else:
+            break
+
 
 def main():
     while True:
@@ -190,19 +201,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df, city)
-
-
-
-
-        # Print 5 row of data
-        i = 0
-        while True:
-            data = input('\nWould like to see the raw data? Enter yes or no.\n')
-            if data.lower() == 'yes':
-                print(df[i:i + 5])
-                i += 5
-            else:
-                break
+        printRowData()
 
 
 
