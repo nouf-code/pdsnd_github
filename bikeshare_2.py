@@ -5,7 +5,7 @@ CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
-
+# this method to get the input from the user
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -61,8 +61,6 @@ def load_data(city, month, day):
     """
     # Read the city file
     df = pd.read_csv(CITY_DATA[city])
-    # check the data (dtype , Nan value)
-    # print(df.info())
 
     # Convert the dtype of Start Time to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
