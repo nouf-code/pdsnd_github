@@ -61,8 +61,6 @@ def load_data(city, month, day):
     """
     # Read the city file
     df = pd.read_csv(CITY_DATA[city])
-    # check the data (dtype , Nan value)
-    # print(df.info())
 
     # Convert the dtype of Start Time to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
